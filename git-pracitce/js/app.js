@@ -27,7 +27,7 @@ function render() {
     li.addEventListener("click", () => {
   todo.completed = !todo.completed;
   save();
-  render();
+  render(;
 });
 li.classList.toggle("completed", todo.completed);
 
