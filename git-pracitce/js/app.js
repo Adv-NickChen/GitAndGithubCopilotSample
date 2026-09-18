@@ -32,6 +32,15 @@ function render() {
 li.classList.toggle("completed", todo.completed);
 
     // Lab 2b: 刪除按鈕在此實作（feature/delete-todo）
+    const deleteBtn = document.createElement("button");
+deleteBtn.textContent = "刪除";
+deleteBtn.addEventListener("click", () => {
+  todos = todos.filter((t) => t.id !== todo.id);
+  save();
+  render();
+});
+li.appendChild(deleteBtn);
+
     list.appendChild(li);
   });
 
