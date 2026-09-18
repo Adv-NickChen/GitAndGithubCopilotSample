@@ -24,6 +24,13 @@ function render() {
     const li = document.createElement("li");
     li.textContent = todo.text;
     // Lab 2a: 點擊切換完成狀態在此實作（feature/toggle-complete）
+    li.addEventListener("click", () => {
+  todo.completed = !todo.completed;
+  save();
+  render();
+});
+li.classList.toggle("completed", todo.completed);
+
     // Lab 2b: 刪除按鈕在此實作（feature/delete-todo）
     list.appendChild(li);
   });
